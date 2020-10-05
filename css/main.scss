@@ -1,0 +1,217 @@
+$breakpoints: (
+	'xs-phone': 580px,
+	'phone': 640px,
+	'tablet': 768px,
+	'tablet-x': 992px,
+	'desktop': 1024px,
+	'widescreen': 1200px,
+	'widescreen-large': 1400px,
+);
+
+
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+//@import 'vendors/fonts';
+//@import 'vendors/bootstrap';
+//@import 'vendors/fontawesome';
+
+
+
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+//@import 'base/typography';
+//@import 'base/forms';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+#wrapper{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	font-family: 'Inter', sans-serif;
+	background: #fff;
+}
+
+.inner-wrapper{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	z-index: 100;
+}
+
+.container{
+	padding: 0 15px;
+	max-width: 1170px;
+	margin: 0 auto;
+
+}
+
+#header{
+	@extend %clearfix;
+
+	.btn{
+		float: right;
+		text-transform: capitalize;
+		margin: 40px 0;
+
+		@include media ("<tablet"){
+			margin: 22px 0;
+		}
+	}
+
+	.container{
+		padding: 15px;
+		@extend %clearfix;
+	}
+}
+
+.btn{
+	height: 40px;
+	padding: 0 20px;
+	background: #b33924;
+	color: #fff;
+	font-size: 14px;
+	line-height: 40px;
+	border-radius: 8px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;
+	border:none;
+	transition: all ease 0.3s;
+	-webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+
+	&:hover{
+		background: #a91c03;
+	}
+}
+
+.logo{
+	float: left;
+	transition: all linear 0.3s;
+	max-width: 200px;
+
+
+	@include media ("<tablet"){
+		max-width: 150px;
+		margin: 0 0 30px
+	}
+
+	a{
+		display: block;
+
+	}
+
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
+.box{
+	position: relative;
+
+	.bx{
+		@include flex-align;
+		height: calc(100vh - 150px);
+		padding: 0 0 150px;
+
+		@include media ("<tablet"){
+			display: block;
+			padding: 0;
+			height: auto;
+		}
+
+		.container{
+			width: 100%;
+		}
+	}
+
+	.col{
+		width: 50%;
+		float: left;
+
+		@include media ("<tablet"){
+			width: 100%;
+			float: none;
+			padding: 50px 0;
+		}
+	}
+
+	.img-box{
+		overflow: hidden;
+
+		img{
+			@include img-reset;
+		}
+
+		canvas{
+			display: block;
+			width: 100%;
+			height: 100%
+		}
+	}
+
+
+
+	h1{
+		font-size: 70px;
+		line-height: 74px;
+		color: #b33924;
+		text-transform: capitalize;
+		transition: all linear 0.3s;
+		font-weight: 100;
+
+		@include media ("<tablet"){
+			font-size: 30px;
+			line-height: 40px;
+			margin: 0 0 30px
+		}
+	}
+
+}
+
+.subscribe-form{
+	width: 100%;
+	position: relative;
+
+	.btn{
+		float: right;
+		border-radius: 0;
+	}
+
+	.form-group{
+		overflow: hidden;
+	}
+
+	.form-control{
+		width: 100%;
+		box-sizing: border-box;
+		height: 40px;
+		border: 1px solid rgba(0,0,0,0.1);
+		font-size: 14px;
+		line-height: 40px;
+		padding: 0 15px;
+	}
+}
+
+#particle-canvas {
+	width: 100%;
+	height: 100%;
+	position: absolute !important;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	> div{
+		background-image: none !important;
+	}
+}
+
+
+@include media ("<tablet"){}
